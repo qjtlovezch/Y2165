@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.IHouseDAO">
+
+    <resultMap id="House" type="Houseinfo">
+        <id column="houseid" property="houseid"></id>
+        <result column="housedesc" property="housedesc"></result>
+        <result column="typeid" property="typeid"></result>
+        <result column="monthlyrent" property="monthlyrent"></result>
+        <result column="publishdate" property="publishdate"></result>
+        <collection property="housetypes" ofType="Housetype">
+            <id column="typeid" property="typeid"></id>
+            <result column="typename" property="typename"></result>
+        </collection>
+    </resultMap>
+
+    <resultMap id="House1" type="Houseinfo">
+        <id column="houseid" property="houseid"></id>
+        <result column="housedesc" property="housedesc"></result>
+        <result column="typeid" property="typeid"></result>
+        <result column="monthlyrent" property="monthlyrent"></result>
+        <result column="publishdate" property="publishdate"></result>
+        <collection property="housetypes" ofType="Housetype">
+            <id column="typeid" property="typeid"></id>
+            <result column="typename" property="typename"></result>
+        </collection>
+    </resultMap>
+
+    <resultMap id="House2" type="Houseinfo">
+        <id column="houseid" property="houseid"></id>
+        <result column="housedesc" property="housedesc"></result>
+        <result column="typeid" property="typeid"></result>
+        <result column="monthlyrent" property="monthlyrent"></result>
+        <result column="publishdate" property="publishdate"></result>
+        <collection property="housetypes" ofType="Housetype">
+            <id column="typeid" property="typeid"></id>
+            <result column="typename" property="typename"></result>
+        </collection>
+    </resultMap>
+
+    <resultMap id="resultMapss" type="category">
+
+        <id property="id" column="id"></id>
+        <result property="text" column="text"></result>
+        <collection property="children"  ofType="thrr">
+            <id property="id" column="id"></id>
+            <result property="text" column="text"></result>
+            <collection property="children" ofType="two">
+                <id property="id" column="id"></id>
+                <result property="text" column="text"></result>
+            </collection>
+        </collection>
+    </resultMap>
+
+<select id="houselist" resultMap="House">
+    SELECT * FROM houseinfo,housetype
+    WHERE houseinfo.typeid=housetype.typeid
+</select>
+    <select id="typelist" resultType="Housetype">
+        SELECT * FROM housetype
+    </select>
+
+    <insert id="inser">
+        INSERT INTO houseinfo(housedesc,typeid,monthlyrent,publishdate)
+        VALUES(#{housedesc},#{typeid},#{monthlyrent},#{publishdate})
+    </insert>
+
+    <select id="infolist" resultMap="House1">
+        SELECT * FROM houseinfo,housetype
+        WHERE houseinfo.typeid=housetype.typeid
+        AND houseinfo.houseid=#{houseid}
+    </select>
+
+    <select id="infolists" resultMap="House2">
+        SELECT * FROM houseinfo,housetype
+        WHERE houseinfo.typeid=housetype.typeid
+        AND houseinfo.housedesc LIKE concat('%', #{housedesc} ,'%')
+    </select>
+    <select id="one" resultMap="resultMapss">
+        SELECT *
+        FROM category,thrr,two
+        WHERE category.id=thrr.cid
+        AND two.tid=thrr.id
+    </select>
+
+    <resultMap id="caMapper" type="Category">
+        <id column="cid" property="cid"></id>
+        <result column="cname" property="cname"></result>
+        <result column="pid" property="pid"></result>
+        <collection property="cates" ofType="Category" select="getabypid" column="cid"></collection>
+    </resultMap>
+    <select id="getabypid" resultMap="caMapper">
+        SELECT * FROM category WHERE pid=#{pid}
+    </select>
+
+    <resultMap id="CateMapper" type="Category">
+        <id column="cid"  property="cid"></id>
+        <result column="cname" property="cname"></result>
+        <collection property="cates" ofType="Category" select="selectAllCate" column="cid">
+        </collection>
+    </resultMap>
+
+    <select id="selectAllCate" resultMap="CateMapper">
+        select cid,cname,pid from category where pid=#{pid}
+    </select>
+
+    <select id="allCateType" resultType="Category">
+        select cid,cname,pid from category
+    </select>
+
+</mapper>
+

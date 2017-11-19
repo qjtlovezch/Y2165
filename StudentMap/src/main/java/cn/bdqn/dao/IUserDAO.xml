@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--头文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.dao.IUserDAO">
+    <!--登录-->
+    <select id="isLogin" resultType="int">
+         select count(1) from user where uname=#{uname} and upwd=#{upwd}
+    </select>
+    <!--查询所有学生-->
+    <select id="getAll" resultType="Student">
+        SELECT * FROM student
+    </select>
+    <!--查询所有班级-->
+    <select id="getAllclass" resultType="ClassRoom">
+        SELECT * FROM class
+    </select>
+    <!--添加班级-->
+    <insert id="addclass">
+        insert into class (cid,cname) values (#{cid},#{cname});
+    </insert>
+    <!--修改成绩-->
+    <update id="updateScore">
+        UPDATE student SET sname=#{sname},score=#{score} WHERE sid=#{sid}
+    </update>
+    <!--删除成绩-->
+    <delete id="delScore">
+        DELETE FROM student WHERE sid=#{sid}
+    </delete>
+
+    <select id="setStu" resultType="Student">
+        SELECT * FROM student WHERE sid=#{sid}
+    </select>
+
+</mapper>

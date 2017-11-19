@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tenement.Dao.IUserInfoDao">
+    <select id="login" resultType="cn.tenement.Entity.User">
+        SELECT * FROM user WHERE userCode=#{0} AND userPassword=#{1}
+    </select>
+
+    <select id="select" resultType="cn.tenement.Entity.role">
+        SELECT * FROM smbms_role WHERE id=#{0}
+    </select>
+    <resultMap id="ressMapperss" type="cn.tenement.Entity.User">
+        <id property="id" column="id"></id>
+        <result property="userCode" column="userCode"></result>
+        <result property="userName" column="userName"></result>
+        <result property="gender" column="gender"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="phone" column="phone"></result>
+        <result property="address" column="address"></result>
+        <result property="userRole" column="userRole"></result>
+        <association property="role" javaType="cn.tenement.Entity.role" >
+            <id property="id" column="id"></id>
+            <result property="roleName" column="roleName"></result>
+
+        </association>
+    </resultMap>
+    <select id="list" resultMap="ressMapperss">
+        SELECT b.id ,b.userCode,b.userName,p.roleName,b.gender,b.birthday,b.phone,b.address,b.userRole FROM user AS b ,smbms_role AS p
+        <where>
+            b.userRole=p.id
+            <if test="userName!=null">
+                AND b.userName LIKE  concat(concat('%',#{userName}),'%')
+            </if>
+
+            limit  #{0},#{1}
+
+        </where>
+    </select>
+    <select id="list2"  resultMap="ressMapperss">
+        SELECT b.id ,b.userCode,b.userName,p.roleName,b.gender,b.birthday,b.phone,b.address,b.userRole FROM user AS b ,smbms_role AS p WHERE    b.userRole=p.id  limit #{0},#{1}
+    </select>
+    <select id="count" resultType="int">
+        SELECT COUNT(*) FROM  user
+
+        <where>
+
+            userName LIKE  concat(concat('%',#{userName}),'%')
+        </where>
+    </select>
+    <insert id="inserts">
+        INSERT INTO user(userCode,userName,userPassword,gender,birthday,phone,address,userRole,createdBy,creationDate) VALUES (#{userCode},#{userName},#{userPassword},#{gender},#{birthday},#{phone},#{address},#{userRole},#{createdBy},#{creationDate})
+    </insert>
+    <delete id="deletes">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+    <select id="selects" resultType="cn.tenement.Entity.User">
+        SELECT * FROM user WHERE id=#{id}
+    </select>
+    <update id="updates">
+        UPDATE user SET userName=#{userName},phone=#{phone},address=#{address},userRole=#{userRole},modifyBy=#{modifyBy},modifyDate=#{modifyDate}  WHERE id=#{id}
+    </update>
+    <select id="rolelist" resultType="cn.tenement.Entity.role">
+        SELECT * FROM  smbms_role
+    </select>
+    <insert id="insertrole">
+        INSERT INTO smbms_role(roleCode,roleName,createdBy,creationDate) VALUES (#{roleCode},#{roleName},#{createdBy},#{creationDate})
+    </insert>
+    <update id="roleupdates">
+        UPDATE smbms_role SET roleName=#{roleName},roleCode=#{roleCode},modifyBy=#{modifyBy},modifyDate=#{modifyDate}  WHERE id=#{id}
+    </update>
+    <select id="roles" resultType="cn.tenement.Entity.role">
+           SELECT * FROM  smbms_role WHERE id=#{id}
+    </select>
+    <update id="uppwd">
+         UPDATE user SET userPassword=#{1} WHERE userPassword=#{0} AND id=#{2}
+    </update>
+    <delete id="roledeletes">
+        DELETE FROM smbms_role WHERE id=#{id}
+    </delete>
+</mapper>

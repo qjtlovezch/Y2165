@@ -1,0 +1,99 @@
+14:12:57,064 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:12:57,070 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:12:57,314 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:12:57,389 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:12:57,395 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:12:57,397 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:12:57,539 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:12:57,540 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:12:57,541 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:15:35,051 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:35,056 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:15:35,223 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:15:35,301 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:35,301 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:15:35,303 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:15:35,307 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:35,307 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:15:35,308 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:15:48,534 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:48,542 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:15:48,743 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:15:48,812 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:48,813 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:15:48,817 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:15:48,992 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:15:48,993 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:15:48,993 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:18:15,680 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:15,695 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:18:16,336 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:18:16,378 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:16,379 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:18:16,382 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:18:16,486 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:16,487 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:18:16,489 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:18:57,555 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,562 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,667 DEBUG getabypid:132 - ==> Parameters: 1(Integer)
+14:18:57,739 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,740 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,741 DEBUG getabypid:132 - ==> Parameters: 3(Integer)
+14:18:57,749 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,750 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,750 DEBUG getabypid:132 - ==> Parameters: 6(Integer)
+14:18:57,760 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,761 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,762 DEBUG getabypid:132 - ==> Parameters: 7(Integer)
+14:18:57,769 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,771 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,772 DEBUG getabypid:132 - ==> Parameters: 8(Integer)
+14:18:57,785 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,788 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,789 DEBUG getabypid:132 - ==> Parameters: 9(Integer)
+14:18:57,795 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,795 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,796 DEBUG getabypid:132 - ==> Parameters: 10(Integer)
+14:18:57,801 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,802 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,803 DEBUG getabypid:132 - ==> Parameters: 4(Integer)
+14:18:57,809 DEBUG getabypid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:18:57,809 DEBUG getabypid:132 - ==>  Preparing: SELECT * FROM category WHERE pid=? 
+14:18:57,812 DEBUG getabypid:132 - ==> Parameters: 5(Integer)
+14:19:05,001 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:05,011 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:05,242 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:05,273 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:05,274 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:19:05,277 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:19:05,382 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:05,383 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:05,383 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:19,973 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:19,979 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:20,144 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:43,416 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:43,421 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:43,642 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:43,672 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:43,673 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:43,673 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:53,899 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:53,908 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:54,013 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:19:54,042 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:54,042 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:19:54,045 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:19:54,235 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:19:54,236 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:19:54,236 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:20:19,786 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:20:19,791 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:20:19,880 DEBUG getid:132 - ==> Parameters: 1(Integer)
+14:20:19,928 DEBUG insert:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:20:19,929 DEBUG insert:132 - ==>  Preparing: INSERT INTO bloginfo(blogAuthor,blogAddress) values(?,?) 
+14:20:19,931 DEBUG insert:132 - ==> Parameters: aaaa(String), aaaaa(String)
+14:20:20,101 DEBUG getid:132 - ooo Using Connection [com.mysql.jdbc.JDBC4Connection@3aeaafa6]
+14:20:20,102 DEBUG getid:132 - ==>  Preparing: /*SQL文：SQL语句*/ SELECT * FROM bloginfo WHERE blogId=? 
+14:20:20,103 DEBUG getid:132 - ==> Parameters: 1(Integer)

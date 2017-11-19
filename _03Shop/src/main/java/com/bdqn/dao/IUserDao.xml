@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.dao.IUserDao">
+    <select id="GetAllUserList" resultType="User">
+
+        SELECT  * from smbms_user limit #{pageSize},#{pageIndex}
+
+    </select>
+    <select id="setUser" resultType="User">
+
+        SELECT  * from smbms_user
+
+    </select>
+
+    <select id="Login" resultType="int" parameterType="User">
+          select count(1) as id from smbms_user where userCode=#{n} and userPassword=#{p}
+    </select>
+
+    <select id="count" resultType="int" parameterType="User">
+    select COUNT(*) FROM smbms_user;
+    </select>
+
+
+    <delete id="delId">
+        DELETE FROM smbms_user WHERE id=#{id}
+    </delete>
+
+
+    <select id="getall" resultType="User">
+        SELECT * FROM smbms_user WHERE  id=#{id}
+    </select>
+
+    <update id="updateUser">
+        UPDATE smbms_user SET userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},
+        address=#{address},userRole=#{userRole} WHERE id=#{id}
+    </update>
+
+    <!--添加用户-->
+    <insert id="addNewUser" parameterType="User">
+
+        INSERT INTO smbms_user(userCode,userName,userPassword,gender,birthday,
+        phone,address,userRole)VALUES (#{userCode},
+        #{userName},#{userPassword},#{gender},#{birthday},
+        #{phone},#{address},#{userRole})
+
+    </insert>
+
+
+    <!--条件查询用户列表-->
+    <select id="setUserAll" resultType="User">
+        select * FROM  smbms_user WHERE userName LIKE concat('%', #{userName} ,'%')
+    </select>
+
+
+    <!--2.获取总记录数-->
+    <select id="getTotalCount" resultType="int">
+        select count(1) from smbms_user
+    </select>
+
+    <!--3.获取单页数据-->
+    <select id="getOnePageData" resultType="User">
+        select * from smbms_user limit #{pageIndex},#{pageSize}
+    </select>
+
+
+
+
+
+    <!--模糊查询-->
+    <!--3.获取单页数据带条件-->
+    <select id="getOnePageDataCondition" resultType="User">
+        select * from smbms_user where userName like '%' #{userName} '%' limit #{pageIndex},#{pageSize}
+    </select>
+
+    <!--2.获取带条件的总记录数-->
+    <select id="getTotalCountByUserName" resultType="int">
+        select count(1) from smbms_user WHERE userName like  '%' #{userName} '%'
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--修改密码-->
+    <update id="updatePwd">
+        UPDATE  smbms_user SET userPassword=#{userPassword} WHERE userCode=#{userCode}
+    </update>
+
+    <!--模糊查询-->
+
+
+
+    <select id="excelUser" resultType="User">
+     SELECT *from smbms_user
+    </select>
+
+
+
+</mapper>

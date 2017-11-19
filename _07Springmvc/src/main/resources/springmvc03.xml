@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+
+    <!--处理器映射器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/hello.do" value="abstractController"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--属性方法名解析器-->
+    <bean id="prop" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+        <property name="mappings">
+            <props>
+                <prop key="/one.do">insert</prop>
+                <prop key="/two.do">delete</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--参数方法名解析器-->
+    <bean id="propp" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+       <!-- <property name="paramName" value="actionName"></property>-->
+    </bean>
+
+    <!--试图解析器-->
+  <!--  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>-->
+
+    <!--内部试图解析器-->
+    <bean id="iner" class="org.springframework.web.servlet.view.JstlView">
+        <property name="url" value="/WEB-INF/1.jsp"></property>
+    </bean>
+    <!--外部试图解析器-->
+    <bean id="jd" class="org.springframework.web.servlet.view.RedirectView">
+        <property name="url" value="https://www.jd.com/"></property>
+    </bean>
+
+    <!--beanName试图解析器-->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+
+    <bean id="abstractController" class="cn.bdqn.contrpller.MyMultionController">
+     <property name="methodNameResolver" ref="propp"></property>
+    </bean>
+
+</beans>

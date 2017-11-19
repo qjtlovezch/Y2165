@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Chuku:war">
+    <output-path>$PROJECT_DIR$/Chuku/target</output-path>
+    <root id="archive" name="Y2165.war">
+      <element id="artifact" artifact-name="Chuku:war exploded" />
+    </root>
+  </artifact>
+</component>

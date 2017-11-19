@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.smbms.dao.IProviderDAO">
+    <!--用户列表-->
+    <select resultType="Provider" id="prolist">
+        SELECT * FROM smbms_provider
+    </select>
+
+    <!--删除-->
+    <delete id="prodel">
+        DELETE FROM smbms_provider WHERE id=#{id}
+    </delete>
+
+    <!--根据id查询-->
+    <select resultType="Provider" id="idlist">
+         SELECT * FROM smbms_provider WHERE id=#{id}
+    </select>
+
+    <!--模糊查询-->
+    <select id="prolike" resultType="Provider">
+    SELECT * FROM smbms_provider WHERE proName LIKE CONCAT(CONCAT('%', #{proName}), '%')
+    </select>
+
+    <!--添加-->
+    <insert id="proadd" >
+        INSERT INTO smbms_provider(proCode,proName,proContact,proPhone,proAddress,proFax,proDesc)
+        VALUES (#{proCode},#{proName},#{proContact},#{proPhone},#{proAddress},#{proFax},#{proDesc})
+    </insert>
+
+    <select id="getall" resultType="Provider">
+        SELECT * FROM smbms_provider WHERE  id=#{id}
+    </select>
+
+    <!--修改-->
+    <update id="update">
+        UPDATE smbms_provider SET proCode=#{proCode},proName=#{proName},proContact=#{proContact},proPhone=#{proPhone},proAddress=#{proAddress},proFax=#{proFax},proDesc=#{proDesc} WHERE id=#{id}
+    </update>
+    <!--根据id查询，进行修改的传值-->
+    <select id="Pupdate" resultType="Provider">
+        SELECT * from smbms_provider where id=#{id}
+    </select>
+
+</mapper>

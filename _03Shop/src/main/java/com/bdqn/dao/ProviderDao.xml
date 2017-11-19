@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.dao.ProviderDao">
+
+    <!--列表及分页-->
+    <select id="getPro" resultType="Provider">
+        SELECT * FROM smbms_provider
+    </select>
+<!--根据id查看-->
+    <select id="Pid" resultType="Provider">
+        SELECT * from smbms_provider where id=#{id}
+    </select>
+    <!--根据id查询，进行修改的传值-->
+     <select id="Pupdate" resultType="Provider">
+          SELECT * from smbms_provider where id=#{id}
+     </select>
+    <!--修改-->
+    <update id="update">
+        UPDATE smbms_provider SET proCode=#{proCode},proName=#{proName},proContact=#{proContact},proPhone=#{proPhone},proAddress=#{proAddress},proFax=#{proFax},proDesc=#{proDesc} WHERE id=#{id}
+    </update>
+    <!--删除-->
+    <delete id="delete">
+        DELETE from smbms_provider where id=#{id}
+    </delete>
+    <!--添加-->
+  <insert id="insert">
+    INSERT INTO smbms_provider (proCode,proName,proContact,proPhone,proAddress,proFax,proDesc)VALUE(#{proCode},#{proName},#{proContact},#{proPhone},#{proAddress},#{proFax},#{proDesc})
+  </insert>
+    <!--模糊查询-->
+    <select id="Mtell" resultType="Provider">
+        SELECT * FROM  smbms_provider WHERE proName LIKE CONCAT('%',#{proName},'%')
+    </select>
+</mapper>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="_01Blog" />
+        <module name="_02MyBatis" />
+        <module name="_03Shop" />
+        <module name="_04Ajax" />
+        <module name="_05NewInfo" />
+        <module name="_05Spring" />
+        <module name="_06Student" />
+        <module name="_07Springmvc" />
+        <module name="AppInfo" />
+        <module name="Chuku" />
+        <module name="Class" />
+        <module name="Easyui" />
+        <module name="fenban" />
+        <module name="House" />
+        <module name="id" />
+        <module name="MyBatis" />
+        <module name="Smbms" />
+        <module name="smbmss" />
+        <module name="struts2" />
+        <module name="StudentMap" />
+        <module name="tms" />
+        <module name="Tree" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="_01Blog" target="1.5" />
+      <module name="_02MyBatis" target="1.5" />
+      <module name="_03Shop" target="1.5" />
+      <module name="_04Ajax" target="1.5" />
+      <module name="_05NewInfo" target="1.5" />
+      <module name="_05Spring" target="1.5" />
+      <module name="_06Student" target="1.5" />
+      <module name="_07Springmvc" target="1.5" />
+      <module name="AppInfo" target="1.5" />
+      <module name="Chuku" target="1.5" />
+      <module name="Class" target="1.5" />
+      <module name="Easyui" target="1.5" />
+      <module name="fenban" target="1.5" />
+      <module name="House" target="1.5" />
+      <module name="HttpServer" target="1.8" />
+      <module name="id" target="1.5" />
+      <module name="MyBatis" target="1.5" />
+      <module name="Smbms" target="1.5" />
+      <module name="smbmss" target="1.5" />
+      <module name="struts2" target="1.5" />
+      <module name="StudentMap" target="1.5" />
+      <module name="tms" target="1.5" />
+      <module name="Tree" target="1.6" />
+      <module name="Y216" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

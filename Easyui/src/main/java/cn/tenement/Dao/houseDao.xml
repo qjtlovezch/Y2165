@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tenement.Dao.houseDao">
+    <resultMap id="resultMaps" type="cn.tenement.Entity.houseinfo">
+        <id column="houseid" property="houseid"></id>
+        <result column="housedesc" property="housedesc"></result>
+        <result column="monthlyrent" property="monthlyrent"></result>
+        <result column="publishdate" property="publishdate"></result>
+        <result column="content" property="content"></result>
+        <association property="types"  javaType="cn.tenement.Entity.housetype">
+            <id property="typeid" column="typeid"></id>
+            <result property="typename" column="typename"></result>
+
+        </association>
+    </resultMap>
+    <select id="list" resultMap="resultMaps">
+        SELECT h.houseid,h.housedesc,t.typename,h.publishdate,h.content FROM houseinfo as h ,housetype as t WHERE h.typeid = t.typeid
+    </select>
+    <select id="lists" resultMap="resultMaps">
+         SELECT h.houseid,h.housedesc,t.typename,h.publishdate,h.content FROM houseinfo as h ,housetype as t
+         <where>
+              h.typeid = t.typeid
+             <if test="_parameter!=null">
+                 AND t.typename=#{0}
+             </if>
+
+         </where>
+    </select>
+    <insert id="insert" >
+        insert into houseinfo (housedesc,typeid,publishdate,content) values (#{housedesc},#{typeid},#{publishdate},#{content});
+    </insert>
+    <select id="select" resultMap="resultMaps">
+        SELECT h.houseid,h.housedesc,t.typename,h.publishdate,h.content FROM houseinfo as h ,housetype as t WHERE h.typeid = t.typeid AND h.houseid=#{0}
+    </select>
+    <resultMap type="cn.tenement.Entity.category" id="menu_map">
+        <id property="id" column="id"></id>
+        <result property="text" column="text"></result>
+        <result property="url" column="url"></result>
+        <collection property="children"  column="id" ofType="cn.tenement.Entity.category"
+                    select="one"></collection>
+    </resultMap>
+
+    <!-- 根据父键查询 -->
+    <select id="one"   resultMap="menu_map">
+        select * from category where pid=#{id}
+
+    </select>
+    <select id="two"   resultType="cn.tenement.Entity.category">
+        select * from category where id=#{id}
+
+    </select>
+</mapper>

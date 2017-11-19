@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdqn.dao.BillDao">
+
+    <!--列表及分页-->
+    <resultMap id="House" type="Bill">
+        <id column="id" property="id"></id>
+        <result column="billCode" property="billCode"></result>
+        <result column="productName" property="productName"></result>
+        <result column="providerId" property="providerId"></result>
+        <result column="totalPrice" property="totalPrice"></result>
+        <result column="isPayment" property="isPayment"></result>
+        <result column="creationDate" property="creationDate"></result>
+        <collection property="provider" ofType="Provider">
+            <id column="id" property="id"></id>
+            <result column="proName" property="proName"></result>
+        </collection>
+    </resultMap>
+    <select id="getBill" resultMap="House">
+        SELECT * FROM smbms_bill,smbms_provider WHERE smbms_provider.id=smbms_bill.providerId
+    </select>
+
+    <!--根据id查询-->
+    <select id="biuest" resultType="Bill">
+       select * from smbms_bill where id=#{id}
+    </select>
+    <!--添加-->
+    <insert id="Addbill">
+   INSERT INTO smbms_bill(billCode,productName,productUnit,productCount,totalPrice,providerId,isPayment,creationDate) VALUE(#{billCode},#{productName},#{productUnit},#{productCount},#{totalPrice},#{providerId},#{isPayment},#{creationDate})
+    </insert>
+    <!--根据id查询，进行修改的传值-->
+    <select id="getb" resultType="Bill">
+        select * from smbms_bill where id=#{id}
+    </select>
+    <!--修改-->
+    <update id="Bupdate">
+  UPDATE smbms_bill SET billCode=#{billCode},productName=#{productName},productUnit=#{productUnit},productCount=#{productCount},totalPrice=#{totalPrice},providerId=#{providerId},isPayment=#{isPayment} WHERE id=#{id}
+    </update>
+    <!--删除-->
+    <delete id="Bdelete">
+        DELETE  FROM smbms_bill where id=#{id}
+    </delete>
+
+
+
+<!--多条件查询加分页-->
+    <resultMap id="Houses" type="Bill">
+        <id column="id" property="id"></id>
+        <result column="billCode" property="billCode"></result>
+        <result column="productName" property="productName"></result>
+        <result column="providerId" property="providerId"></result>
+        <result column="totalPrice" property="totalPrice"></result>
+        <result column="isPayment" property="isPayment"></result>
+        <result column="creationDate" property="creationDate"></result>
+        <collection property="provider" ofType="Provider">
+            <id column="id" property="id"></id>
+            <result column="proName" property="proName"></result>
+        </collection>
+    </resultMap>
+    <select id="getBills" resultMap="Houses">
+        SELECT * FROM smbms_bill,smbms_provider WHERE smbms_provider.id=smbms_bill.providerId
+        AND productName=#{productName}
+        AND providerId=#{providerId}
+        AND isPayment=#{isPayment}
+    </select>
+
+</mapper>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AppInfo/AppInfo.iml" filepath="$PROJECT_DIR$/AppInfo/AppInfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chuku/Chuku.iml" filepath="$PROJECT_DIR$/Chuku/Chuku.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Class/Class.iml" filepath="$PROJECT_DIR$/Class/Class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Easyui/Easyui.iml" filepath="$PROJECT_DIR$/Easyui/Easyui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/House/House.iml" filepath="$PROJECT_DIR$/House/House.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HttpServer/HttpServer.iml" filepath="$PROJECT_DIR$/HttpServer/HttpServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyBatis/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis/MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Smbms/Smbms.iml" filepath="$PROJECT_DIR$/Smbms/Smbms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudentMap/StudentMap.iml" filepath="$PROJECT_DIR$/StudentMap/StudentMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree/Tree.iml" filepath="$PROJECT_DIR$/Tree/Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Y216.iml" filepath="$PROJECT_DIR$/Y216.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_01Blog/_01Blog.iml" filepath="$PROJECT_DIR$/_01Blog/_01Blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_02MyBatis/_02MyBatis.iml" filepath="$PROJECT_DIR$/_02MyBatis/_02MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_03Shop/_03Shop.iml" filepath="$PROJECT_DIR$/_03Shop/_03Shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_04Ajax/_04Ajax.iml" filepath="$PROJECT_DIR$/_04Ajax/_04Ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_05NewInfo/_05NewInfo.iml" filepath="$PROJECT_DIR$/_05NewInfo/_05NewInfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_05Spring/_05Spring.iml" filepath="$PROJECT_DIR$/_05Spring/_05Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_06Student/_06Student.iml" filepath="$PROJECT_DIR$/_06Student/_06Student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_07Springmvc/_07Springmvc.iml" filepath="$PROJECT_DIR$/_07Springmvc/_07Springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fenban/fenban.iml" filepath="$PROJECT_DIR$/fenban/fenban.iml" />
+      <module fileurl="file://$PROJECT_DIR$/id/id.iml" filepath="$PROJECT_DIR$/id/id.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbmss/smbmss.iml" filepath="$PROJECT_DIR$/smbmss/smbmss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/struts2/struts2.iml" filepath="$PROJECT_DIR$/struts2/struts2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tms/tms.iml" filepath="$PROJECT_DIR$/tms/tms.iml" />
+    </modules>
+  </component>
+</project>

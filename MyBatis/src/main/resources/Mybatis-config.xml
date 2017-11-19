@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--文档类型，头文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根节点，XMl只能有一个-->
+<configuration>
+    <!--一个environments有N个environment-->
+    <typeAliases>
+        <package name="cn.bdqn.entity"></package>
+    </typeAliases>
+
+    <environments default="development">
+
+        <environment id="development">
+            <!--
+           transactionManager:JDBC保证事务的
+           update
+           delete
+           事务分类：JDBC:编程式事务
+                       xxx.beginTransaction()
+
+                       tx.commit()
+                       tx.rollback()
+                     配置式事务
+                     JDBC|MANAGED
+                     区别
+
+           -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--
+               POOLED：MyBatis内置的连接池
+               c3p0连接池
+                       POOLED 、UNPOOLED  、JNDI
+           -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///y2165"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+
+        </environment>
+    </environments>
+
+        <mappers>
+
+            <mapper resource="cn/bdqn/dao/UserMapper.xml"></mapper>
+
+        </mappers>
+        </configuration>

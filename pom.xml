@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Y2165</groupId>
+  <artifactId>Y2165</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>_01Blog</module>
+      <module>_02MyBatis</module>
+
+      <module>_03Shop</module>
+      <module>MyBatis</module>
+      <module>_04Ajax</module>
+      <module>_05NewInfo</module>
+      <module>_05Spring</module>
+
+      <module>_06SpringMyBatis</module>
+      <module>_06Student</module>
+      <module>_06Student</module>
+      <module>Student</module>
+      <module>Student</module>
+    <module>StudentMap</module>
+      <module>fenban</module>
+      <module>_1</module>
+      <module>_07Springmvc</module>
+      <module>HttpServer</module>
+      <module>AppInfo</module>
+      <module>Smbms</module>
+      <module>id</module>
+      <module>Chuku</module>
+    <module>House</module>
+      <module>Class</module>
+      <module>Tree</module>
+      <module>smbmss</module>
+      <module>Easyui</module>
+      <module>tms</module>
+      <module>tms</module>
+      <module>struts2</module>
+  </modules>
+  <name>Y2165 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
+
+  </dependencies>
+  <build>
+    <finalName>Y2165</finalName>
+  </build>
+</project>

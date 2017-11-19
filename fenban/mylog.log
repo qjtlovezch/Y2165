@@ -1,0 +1,48 @@
+12:07:15,162 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:07:15,171 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where student.studentid=studentattendance.studentid and attendance.attendanceid=studentattendance.attendanceid and studentattendance.attendancetime=? order by studentattendance.studentattendaneid 
+12:07:15,215 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:08:10,497 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:08:10,508 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where student.studentid=studentattendance.studentid and attendance.attendanceid=studentattendance.attendanceid and studentattendance.attendancetime=? order by studentattendance.studentattendaneid 
+12:08:10,571 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:09:55,734 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:09:55,742 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? order by studentattendance.studentattendaneid 
+12:09:55,789 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:13:20,916 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:13:20,927 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? order by studentattendance.studentattendaneid 
+12:13:20,974 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11(String)
+12:14:02,542 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:14:02,551 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? order by studentattendance.studentattendaneid 
+12:14:02,599 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:15:40,324 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:15:40,333 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:15:40,376 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:17:14,314 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:17:14,323 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:17:14,370 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:17:45,654 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:17:45,688 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:17:45,743 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:18:30,718 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:18:30,728 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:18:30,789 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:18:56,011 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:18:56,022 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:18:56,069 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:19:31,827 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:19:31,835 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:19:31,886 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:21:20,207 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:21:20,215 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:21:20,261 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:23:19,073 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:23:19,082 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:23:19,134 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:24:04,558 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:24:04,569 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:24:04,627 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:25:18,981 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:25:18,992 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:25:19,062 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)
+12:25:38,879 DEBUG getAllByTime:46 - ooo Using Connection [jdbc:mysql:///kaoshi, UserName=root@localhost, MySQL Connector Java]
+12:25:38,888 DEBUG getAllByTime:46 - ==>  Preparing: select * from studentattendance,student,attendance where studentattendance.studentid=student.studentid and studentattendance.attendanceid=attendance.attendanceid and studentattendance.attendancetime=? 
+12:25:38,932 DEBUG getAllByTime:46 - ==> Parameters: 2017-08-11 00:00:00.0(Timestamp)

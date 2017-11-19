@@ -1,0 +1,9 @@
+09:59:18,241 DEBUG getAll:46 - ooo Using Connection [jdbc:mysql:///y2165, UserName=root@localhost, MySQL Connector Java]
+09:59:18,272 DEBUG getAll:46 - ==>  Preparing: SELECT * FROM student 
+09:59:18,319 DEBUG getAll:46 - ==> Parameters: 
+10:02:24,476 DEBUG getAll:46 - ooo Using Connection [jdbc:mysql:///y2165, UserName=root@localhost, MySQL Connector Java]
+10:02:24,484 DEBUG getAll:46 - ==>  Preparing: SELECT * FROM student 
+10:02:24,531 DEBUG getAll:46 - ==> Parameters: 
+10:06:16,652 DEBUG getAll:46 - ooo Using Connection [jdbc:mysql:///y2165, UserName=root@localhost, MySQL Connector Java]
+10:06:16,699 DEBUG getAll:46 - ==>  Preparing: SELECT * FROM student 
+10:06:16,755 DEBUG getAll:46 - ==> Parameters: 

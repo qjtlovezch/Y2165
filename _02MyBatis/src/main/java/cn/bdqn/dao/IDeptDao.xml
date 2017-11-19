@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--头文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace：
+     命名空间：区分不同空间下的同名SQLID
+     A： findlAll
+     B:  findAll
+    -->
+
+<mapper namespace="cn.bdqn.dao.IDeptDao">
+    <cache/>
+    <!--SQL标签
+      id:唯一锁定到SQL标识
+      paramenterType:SQL语句的入参  可以省略
+      resultType：
+      增删除操作：不能 写
+      查询：单个实体的类型
+    -->
+<sql id="aa">
+    blogId,blogAuthor,blogAddress,blogDel
+</sql>
+    <resultMap id="DeptMap" type="Dept">
+        <!--<result column="BlogAuthorr" property="blogAuthor"/>-->
+    </resultMap>
+    <!--查询所有-->
+    <select id="getAll"  resultMap="DeptMap">
+  /*SQL文：SQL语句*/
+        SELECT <include refid="aa"></include>FROM  bloginfo
+    </select>
+    <!--根据id查询-->
+    <select id="getid"  resultType="Dept" useCache="false">
+        /*SQL文：SQL语句*/
+        SELECT * FROM  bloginfo WHERE blogId=#{blogId}
+    </select>
+  <!--添加-->
+    <insert id="insert" flushCache="false">
+        INSERT INTO bloginfo(blogAuthor,blogAddress) values(#{blogAuthor},#{blogAddress})
+    </insert>
+
+    <!--//修改-->
+    <update id="upd">
+        UPDATE bloginfo SET blogAuthor=#{blogAuthor},
+        blogAddress=#{blogAddress}
+        where blogId=#{blogId}
+    </update>
+
+    <!--删除-->
+    <delete id="del">
+        DELETE FROM bloginfo WHERE blogId=#{blogId}
+    </delete>
+    <select id="findAll" resultType="Dept">
+        <!--SELECT * FROM bloginfo WHERE blogAuthor LIKE '%${blogAuthor}%'-->
+        <!--SELECT * FROM bloginfo WHERE blogAuthor LIKE '%' #{blogAuthor} '%'-->
+        SELECT * FROM bloginfo WHERE blogAuthor LIKE concat('%',#{blogAuthor},'%')
+    </select>
+    <!--多添件查询-->
+    <select id="find" resultType="Dept">
+
+        SELECT * FROM bloginfo WHERE blogAuthor LIKE '%' #{blogAuthor} '%' AND blogId>#{blogId}
+
+    </select>
+
+    <!--多添件查询-->
+    <select id="findsuo" resultType="Dept">
+
+        SELECT * FROM bloginfo WHERE blogAuthor LIKE '%' #{0} '%' AND blogId>#{1}
+
+    </select>
+   <!-- 智能标签if-->
+    <select id="findByIf" resultType="Dept">
+        SELECT * FROM  bloginfo
+         <where>
+            <if test="blogAuthor!=null">
+                and blogAuthor like '%' #{blogAuthor} '%'
+            </if>
+            <if test="blogId!=null">
+                AND blogId>#{blogId}
+
+            </if>
+
+         </where>
+    </select>
+    <!-- 智能标签choose-->
+    <select id="findchoose" resultType="Dept">
+        SELECT * FROM  bloginfo
+        <where>
+            <choose>
+                <when test="blogAuthor!=null">
+                    and blogAuthor like '%' #{blogAuthor} '%'
+                </when>
+                <when test="blogId!=null">
+                    AND blogId>#{blogId}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <!-- 智能标签foreach array-->
+    <select id="findforeacharray" resultType="Dept">
+        SELECT * FROM  bloginfo
+        <where>
+           <if test="array.length>0">
+               blogId IN
+               <foreach collection="array" open="(" close=")" separator="," item="blogId">
+                   #{blogId}
+               </foreach>
+           </if>
+        </where>
+    </select>
+    <!-- 智能标签foreach list<Integer>-->
+    <select id="findDept" resultType="Dept">
+        SELECT * FROM  bloginfo
+        <where>
+            <if test="list.size>0">
+                blogId IN
+                <foreach collection="list" open="(" close=")" separator="," item="blog">
+                    #{blog.blogId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <!-- 智能标签foreach list<Dept>-->
+    <select id="findlist" resultType="Dept">
+        SELECT * FROM  bloginfo
+        <where>
+            <if test="list.size>0">
+                blogId IN
+                <foreach collection="list" open="(" close=")" separator="," item="blogId">
+                    #{blogId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.smbms.dao.IUserInfoDAO">
+
+    <!--1.登录-->
+    <select id="isLogin"  resultType="UserInfo">
+        select usercode,userName from smbms_user where usercode=#{userCode} and userPassword=#{userPassword}
+    </select>
+
+    <!--列表-->
+    <select id="list" resultType="UserInfo">
+        SELECT * FROM smbms_user
+    </select>
+
+    <!--删除-->
+    <delete id="delId">
+        DELETE FROM smbms_user WHERE id=#{id}
+    </delete>
+
+    <!--根据id查询-->
+    <select id="useridlist" resultType="UserInfo">
+    SELECT * FROM smbms_user WHERE id=#{id}
+    </select>
+
+    <!--添加用户-->
+    <insert id="useradd" >
+        INSERT INTO smbms_user(userCode,userName,userPassword,gender,birthday,phone,address,userRole)
+        VALUES (#{userCode},#{userName},#{userPassword},#{gender},#{birthday},#{phone},#{address},#{userRole})
+    </insert>
+
+    <select id="getall" resultType="UserInfo">
+        SELECT * FROM smbms_user WHERE  id=#{id}
+    </select>
+    <!--修改-->
+    <update id="updateUser">
+        UPDATE smbms_user SET userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},
+        address=#{address},userRole=#{userRole} WHERE id=#{id}
+    </update>
+
+    <select id="GetAllUserList" resultType="UserInfo">
+        SELECT  * from smbms_user limit #{pageSize},#{pageIndex}
+    </select>
+
+    <select id="count" resultType="int" parameterType="UserInfo">
+      select COUNT(*) FROM smbms_user;
+    </select>
+
+    <!--获取总记录数-->
+    <select id="getTotalCount" resultType="int">
+        select count(1) from smbms_user
+    </select>
+
+    <!--获取单页数据-->
+    <select id="getOnePageData" resultType="UserInfo">
+        select * from smbms_user limit #{pageIndex},#{pageSize}
+    </select>
+
+
+
+    <select resultType="UserInfo" id="getOnePageDataCondition"> select * from smbms_user where userName like '%' #{userName} '%' limit #{pageIndex},#{pageSize} </select>
+
+    <!--2.获取带条件的总记录数-->
+    <select resultType="int" id="getTotalCountByUserName"> select count(1) from smbms_user WHERE userName like '%' #{userName} '%' </select>
+
+    <!--修改密码-->
+    <update id="updatePwd">
+        UPDATE  smbms_user SET userPassword=#{userPassword} WHERE userCode=#{userCode}
+    </update>
+
+    <select id="excelUser" resultType="UserInfo">
+        SELECT * from smbms_user
+    </select>
+</mapper>

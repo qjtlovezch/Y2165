@@ -1,0 +1,23 @@
+[{
+	"id": "0",	
+	"text": "根节点",
+	"children": [{
+		"id":1,
+		"text":"员工管理",
+		"iconCls" : "icon-cut",
+		"attributes" : {
+			"url":"/pages/user/list.html"
+		}
+	},{
+		"id":2,
+		"text":"部门管理",
+		"iconCls" : "icon-no",
+		"attributes" : {
+			"url":"/pages/dept/list.html"
+		}
+	},{
+		"id":3,
+		"text":"权限",
+		"iconCls" : "icon-print"
+	}]
+}]

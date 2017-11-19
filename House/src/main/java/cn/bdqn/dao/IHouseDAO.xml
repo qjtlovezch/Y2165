@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.IHouseDAO">
+
+    <resultMap id="House" type="Houseinfo">
+        <id column="houseid" property="houseid"></id>
+        <result column="housedesc" property="housedesc"></result>
+        <result column="typeid" property="typeid"></result>
+        <result column="monthlyrent" property="monthlyrent"></result>
+        <result column="publishdate" property="publishdate"></result>
+        <collection property="housetypes" ofType="Housetype">
+            <id column="typeid" property="typeid"></id>
+            <result column="typename" property="typename"></result>
+        </collection>
+    </resultMap>
+
+    <select id="houselist" resultMap="House">
+        SELECT * FROM houseinfo,housetype
+        WHERE houseinfo.typeid=housetype.typeid
+    </select>
+    <insert id="addhouse">
+        INSERT INTO houseinfo(housedesc,typeid,monthlyrent)
+        VALUE (#{housedesc},#{typeid},#{monthlyrent})
+    </insert>
+
+    <select id="getall" resultType="Housetype">
+        SELECT * FROM housetype
+    </select>
+</mapper>
+

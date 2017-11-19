@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--文档类型，头文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根节点，XMl只能有一个-->
+<configuration>
+
+
+    <typeAliases>
+        <package name="cn.smbms.entity"></package>
+    </typeAliases>
+    <!--分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper"></plugin>
+    </plugins>
+
+</configuration>

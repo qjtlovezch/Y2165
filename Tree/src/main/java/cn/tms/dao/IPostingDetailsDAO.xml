@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tms.dao.IPostingDetailsDAO">
+    <update id="modifyDetailByCondition">
+          UPDATE postingdetails SET title=#{title},sysCode=#{sysCode},summary=#{summary},contents=#{contents},articlePicture=#{articlePicture},publish=#{publish} WHERE id =#{id}
+      </update>
+
+
+    <select id="getArticleByCondition" resultMap="PostingMapper">
+         SELECT postingdetails.title,content.columnname
+         ,postingdetails.titleColor,postingdetails.articlePicture
+          ,postingdetails.summary,postingdetails.contents,
+          content.syscode,content.columncode
+           FROM postingdetails,content
+           WHERE postingdetails.sysCode = content.syscode
+            AND postingdetails.id= #{id}
+    </select>
+    <resultMap id="PostingMapper" type="cn.tms.entity.PostingDetails">
+        <result column="title" property="title"/>
+        <result column="articlePicture" property="articlePicture" typeHandler="cn.tms.util.MyBlobTypeHandler"/>
+        <result column="summary" property="summary" typeHandler="cn.tms.util.MyBlobTypeHandler"/>
+        <result column="contents" property="contents" typeHandler="cn.tms.util.MyBlobTypeHandler"/>
+        <association property="content" javaType="cn.tms.entity.Content">
+            <result column="syscode" property="syscode"/>
+            <result column="columnname" property="columnname"/>
+            <result column="columncode" property="columncode"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="saveArticle">
+        INSERT INTO postingdetails(`title`,`sysCode`,`creator`,`modifyTime`,`contents`,`articlePicture`,`summary`,`titleColor`,`publish`)
+    VALUES(#{title},#{sysCode},#{creator},#{modifyTime},#{contents},#{articlePicture},#{summary},#{titleColor},#{publish})
+    </insert>
+
+
+    <delete id="delDetailsByCondition">
+        DELETE FROM postingdetails WHERE id =#{id}
+   </delete>
+
+    <select id="getCountByCondition" resultType="int">
+        SELECT COUNT(1) FROM PostingDetails
+        <where>
+            sysCode IN (
+            SELECT sysCode FROM content
+            <where>
+                <if test="columnCode!=null">
+                    AND columnCode =#{columnCode}
+                </if>
+                <if test="search!=null">
+                    AND title =#{search};
+                </if>
+            </where>
+            )
+        </where>
+        <if test="publish!=null">
+            AND publish =#{publish}
+        </if>
+    </select>
+
+    <select id="getDetailsListByCondition" resultMap="DetailsMapper">
+        SELECT content.`columnname`,content.columncode
+        ,sys_userinfo.`username`,postingdetails.*
+        FROM postingdetails,sys_userinfo,content
+        <where>
+            content.syscode=postingdetails.sysCode
+            AND sys_userinfo.username=postingdetails.creator
+            <if test="columnCode!=null">
+                AND content.columnCode=#{columnCode}
+            </if>
+            <if test="search!=null">
+                AND postingdetails.title=#{search}
+            </if>
+            <if test="publish!=null">
+                AND postingdetails.publish =#{publish}
+            </if>
+
+        </where>
+        LIMIT #{page},#{rows}
+    </select>
+
+    <resultMap id="DetailsMapper" type="cn.tms.entity.PostingDetails">
+        <id column="id" property="id"></id>
+        <result column="title" property="title"/>
+        <result column="weight" property="weight"/>
+        <result column="clicks" property="clicks"/>
+        <result column="modifyTime" property="modifyTime"/>
+
+        <association property="user" javaType="cn.tms.entity.UserInfo">
+            <id column="uid" property="uid"></id>
+            <result column="username" property="username"/>
+        </association>
+        <association property="content" javaType="cn.tms.entity.Content">
+            <id column="syscode" property="syscode"></id>
+            <result column="columnname" property="columnname"/>
+        </association>
+    </resultMap>
+</mapper>

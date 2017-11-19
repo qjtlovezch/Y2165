@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.thrift:ueditor:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/thrift/ueditor/unknown/ueditor-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/thrift/ueditor/unknown/ueditor-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/thrift/ueditor/unknown/ueditor-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

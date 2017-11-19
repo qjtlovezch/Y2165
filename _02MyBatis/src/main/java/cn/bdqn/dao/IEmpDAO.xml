@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--头文件-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.IEmpDAO">
+    <!--根据部门编号，查询部门对象，对象里面包含着员工的集合-->
+    <resultMap id="empMapper" type="Emp">
+        <id column="empNo" property="empNo"></id>
+        <result column="empName" property="empName"/>
+        <association property="dept" javaType="deptt">
+            <id column="deptNo" property="deptNo"></id>
+            <result column="deptName" property="deptName"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="empMappersql" type="Emp">
+        <id column="empNo" property="empNo"></id>
+        <result column="empName" property="empName"/>
+        <association property="dept" javaType="deptt" select="selectempNo" column="deptNo">
+        </association>
+    </resultMap>
+
+    <select id="selectempNo" resultType="deptt">
+        SELECT * FROM dept WHERE deptNo=#{deptNo}
+    </select>
+
+    <!--多对一 单sql -->
+    <select id="getempon" resultMap="empMapper">
+        select dept.deptNo,deptName,empNo,empName
+        from dept,emp
+        where dept.deptNo=emp.deptNo
+        and empNo=#{empNo}
+    </select>
+    <!--多对一 多sql -->
+    <select id="getemp" resultMap="empMappersql">
+        select deptNo,empNo,empName
+        from emp
+        where empNo=#{empNo}
+
+    </select>
+</mapper>

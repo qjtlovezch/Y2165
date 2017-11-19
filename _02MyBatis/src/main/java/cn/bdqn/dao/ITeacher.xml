@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--头文件-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.ITeacher">
+
+    <resultMap id="ttt" type="Teacher">
+        <id column="tid" property="tid"></id>
+        <result column="tname" property="tname"/>
+        <collection property="ttt" ofType="Student">
+            <id column="sid" property="sid"></id>
+            <result column="sname" property="sname"/>
+        </collection>
+    </resultMap>
+
+   <!-- 多对多-->
+    <select id="geti" resultMap="ttt">
+        SELECT student.sid,sname,teacher.tid,tname
+        FROM student,teacher_student,teacher
+        WHERE student.sid=teacher_student.sid
+        AND teacher.tid=teacher_student.tid
+        AND teacher.tid=#{tid}
+    </select>
+</mapper>

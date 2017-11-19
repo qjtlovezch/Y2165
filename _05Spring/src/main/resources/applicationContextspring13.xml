@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--01.目标对象-->
+    <bean id="someService" class="cn.bdqn.spring15.SomeService"></bean>
+    <bean id="someService1" class="cn.bdqn.spring15.SomeService1"></bean>
+    <!--02.增强 通知-->
+    <bean id="beforeAdvice" class="cn.bdqn.spring15.MyBeforeAdvise"></bean>
+    <bean id="afterAdvice" class="cn.bdqn.spring15.MyAfterReturningAdvice"></bean>
+    <!--增强：前置顾问-->
+    <bean id="beforeAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="beforeAdvice"></property>
+        <property name="pattern" value=".*do.*"></property>
+    </bean>
+
+    <!--增强：后置顾问-->
+    <bean id="afterAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="afterAdvice"></property>
+        <property name="pattern" value=".*do.*"></property>
+    </bean>
+
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+
+</beans>

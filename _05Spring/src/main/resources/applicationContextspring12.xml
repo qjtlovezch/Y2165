@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
+">
+   <!--01.目标对象-->
+    <bean id="someService" class="cn.bdqn.spring14.SomeService"></bean>
+
+    <!--02.增强 通知-->
+    <bean id="beforeAdvice" class="cn.bdqn.spring14.MyBeforeAdvise"></bean>
+
+
+    <!--02.增强 :顾问-->
+    <bean id="beforeAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice" ref="beforeAdvice" ></property>
+        <property name="pattern" value=".*b.*"></property>
+    </bean>
+
+    <!--03.aop -->
+    <bean id="proxyService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <!--配置需要增强的目标对象-->
+        <property name="target" ref="someService"></property>
+        <!--做怎么样的增强-->
+        <property name="interceptorNames" value="beforeAdvisor"></property>
+
+    </bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

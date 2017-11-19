@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation=" http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd "
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans">
+
+    <bean id="dao" class="cn.bdqn.aop02.dao.UserDAOImpl"/>
+
+    <bean id="service" class="cn.bdqn.aop02.service.UserServiceImpl">
+
+        <property name="dao" ref="dao"></property>
+
+    </bean>
+
+    <bean class="cn.bdqn.aop02.aop.LoggerBeforeAdvice" id="beforeAdvice"/>
+
+    <aop:config>
+
+        <aop:pointcut id="mypointcut" expression="execution(public void save2(cn.bdqn.aop02.entity.User))"/>
+
+        <aop:advisor pointcut-ref="mypointcut" advice-ref="beforeAdvice"/>
+
+    </aop:config>
+</beans>
